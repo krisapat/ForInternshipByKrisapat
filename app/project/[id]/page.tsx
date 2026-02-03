@@ -30,9 +30,7 @@ export default async function ProjectDetail({ params }: { params: Promise<{ id: 
     const data = await getData();
     const { id } = await params
     const project = await fetchProjectDetail({ id })
-    console.log(params)
     if (!project) redirect("/project")
-
     const { name, descriptionCard, descriptionDetail, image, demoLink } = project as ProjectProps
 
     return (

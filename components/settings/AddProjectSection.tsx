@@ -1,7 +1,10 @@
+"use client"
+
 import Link from "next/link"
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 import { Shield } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import MagneticButton from "@/components/animations/MagneticButton"
 
 const AdminSection = () => {
   return (
@@ -28,13 +31,15 @@ const AdminSection = () => {
           </CardHeader>
 
           <CardContent>
-            <Button
-              asChild
-              className="w-full bg-[#00c950] hover:bg-[#00b850] text-white font-medium
-              shadow-md hover:shadow-lg transition-all duration-300 active:scale-[0.97]"
-            >
-              <Link href="/setting/addproject">Add Projects</Link>
-            </Button>
+            <MagneticButton magneticStrength={0.3} className="w-full">
+              <Button
+                asChild
+                className="w-full bg-[#00c950] hover:bg-[#00b850] text-white font-medium
+                shadow-md hover:shadow-lg transition-all duration-300 active:scale-[0.97]"
+              >
+                <Link href="/setting/addproject">Add Projects</Link>
+              </Button>
+            </MagneticButton>
           </CardContent>
         </div>
       </Card>

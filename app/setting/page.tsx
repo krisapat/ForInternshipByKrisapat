@@ -1,4 +1,3 @@
-import { getData } from "@/actions/actions"
 import FadeUpWhenVisible from "@/components/animations/FadeUpWhenVisible"
 import AddProjectSection from "@/components/settings/AddProjectSection"
 import DarkmodeSection from "@/components/settings/DarkmodeSection"
@@ -6,11 +5,10 @@ import LoginSection from "@/components/settings/LoginSection"
 import { currentUser } from "@clerk/nextjs/server"
 import { Metadata } from "next"
 export const metadata: Metadata = {
-  title: "Krisapat Portfolio | Setting",
-  description: "Krisapat Portfolio Setting Page",
+    title: "Krisapat Portfolio | Setting",
+    description: "Krisapat Portfolio Setting Page",
 };
 const SettingPage = async () => {
-    const data = await getData();
     const user = await currentUser()
     const isAdmin = user?.privateMetadata?.isAdmin === true
     return (

@@ -10,7 +10,6 @@ export const metadata: Metadata = {
   description: "Krisapat Portfolio Project Page",
 };
 const Project = async () => {
-  const data = await getData();
   const project: ProjectProps[] = await fetchProject();
   if (project.length === 0) {
     return <p className="text-center text-gray-500">No projects available</p>
@@ -25,7 +24,7 @@ const Project = async () => {
       <Suspense fallback={<ProjectSkeleton />}>
         <ProjectList project={project} />
       </Suspense>
-      
+
     </main>
   )
 }

@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { LogIn } from "lucide-react"
 import SignOutLinks from "./settingsComponents/SignOutLinks"
+import MagneticButton from "@/components/animations/MagneticButton"
 
 const LoginSection = () => {
   return (
@@ -33,24 +34,28 @@ const LoginSection = () => {
           <CardContent>
             <SignedOut>
               <div className="flex gap-2">
-                <SignInButton mode="modal">
-                  <Button
-                    className="flex-1 bg-[#00c950] hover:bg-[#00b850] text-white font-medium
-                    shadow-md hover:shadow-lg transition-all duration-300 active:scale-[0.97]"
-                  >
-                    Login
-                  </Button>
-                </SignInButton>
+                <MagneticButton magneticStrength={0.25} className="flex-1">
+                  <SignInButton mode="modal">
+                    <Button
+                      className="w-full bg-[#00c950] hover:bg-[#00b850] text-white font-medium
+                      shadow-md hover:shadow-lg transition-all duration-300 active:scale-[0.97]"
+                    >
+                      Login
+                    </Button>
+                  </SignInButton>
+                </MagneticButton>
 
-                <SignUpButton mode="modal">
-                  <Button
-                    variant="outline"
-                    className="flex-1 border border-[#00c950]/40 hover:border-[#00c950] 
-                    transition-colors duration-300"
-                  >
-                    Register
-                  </Button>
-                </SignUpButton>
+                <MagneticButton magneticStrength={0.25} className="flex-1">
+                  <SignUpButton mode="modal">
+                    <Button
+                      variant="outline"
+                      className="w-full border border-[#00c950]/40 hover:border-[#00c950] 
+                      transition-colors duration-300"
+                    >
+                      Register
+                    </Button>
+                  </SignUpButton>
+                </MagneticButton>
               </div>
             </SignedOut>
             <SignedIn>
