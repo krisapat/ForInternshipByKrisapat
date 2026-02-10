@@ -11,7 +11,7 @@ export default function HeroSection() {
     return (
         <FadeUpWhenVisible>
             <section
-                className="relative min-h-screen w-[calc(100%+2.5rem)] -mx-5 -mt-10 pt-5 flex flex-col justify-center items-center text-center 
+                className="relative min-h-screen w-[calc(100%+2.5rem)] -mx-5 -mt-24 pt-20 flex flex-col justify-center items-center text-center 
         bg-linear-to-b from-[#00c950]/20 via-[#00aaff]/10 to-transparent space-y-6 overflow-hidden"
             >
                 {/* Particle Background */}

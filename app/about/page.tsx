@@ -19,49 +19,55 @@ const About = async () => {
           About Me
         </h1>
       </FadeUpWhenVisible>
-      <div className="w-full max-w-5xl mx-auto grid gap-5 grid-cols-1 md:grid-cols-2 items-center">
-        {/* Left Image */}
-        <div className="w-full flex justify-center">
-          <TiltCard tiltAmount={10} className="h-full">
-            <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-xl overflow-hidden shadow-xl">
-              <Image
-                src="/img/about/image.png"
-                alt="profile"
-                fill
-                className="object-cover"
-              />
-            </div>
-          </TiltCard>
-        </div>
+      <FadeUpWhenVisible>
+        <div className="w-full max-w-5xl mx-auto grid gap-5 grid-cols-1 md:grid-cols-2 items-center">
+          {/* Left Image */}
+          <div className="w-full flex justify-center">
+            <TiltCard tiltAmount={10} className="h-full">
+              <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-xl overflow-hidden shadow-xl">
+                <Image
+                  src="/img/about/image.png"
+                  alt="profile"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </TiltCard>
+          </div>
 
-        {/* Right Content */}
-        <div className="w-full space-y-4">
-          <TypingHeader
-            className="text-2xl md:text-3xl text-center md:text-left"
-            words={words}
-          />
-          <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-            ผมชื่อนายกฤศภัท ศรีลาแสง ชื่นชอบการทำเว็บไซต์ให้ออกมาสวยงามและตอบสนองการใช้งานได้ดี เพราะเชื่อว่าการทำให้ผู้ใช้งานเว็บไซต์ได้รับประสบการณ์ใช้งานที่ดีและใช้งาน
-            จะช่วยเพิ่มโอกาสทางธุรกิจได้<br />
-            กำลังศึกษาอยู่ที่สถาบันเทคโนโลยีพระจอมเกล้าคุณทหาร ลาดกระบัง<br /><br />
-            ความสนใจในสายงาน : สนใจในการทำ Frontend Development กำลังพัฒนาสกิลการทำอนิเมชั่นที่หน้าเว็บให้เก่งมากขึ้นเพราะเชื่อว่าการตอบสนองที่ลื่นและมีประติสัมพันธ์กับผู้ใช้จะช่วยเพิ่มประสบการณ์การใช้งานที่ดีได้
-          </p>
+          {/* Right Content */}
+          <div className="w-full space-y-4">
+            <TypingHeader
+              className="text-2xl md:text-3xl text-center md:text-left"
+              words={words}
+            />
+            <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+              ผมชื่อนายกฤศภัท ศรีลาแสง ชื่นชอบการทำเว็บไซต์ให้ออกมาสวยงามและตอบสนองการใช้งานได้ดี เพราะเชื่อว่าการทำให้ผู้ใช้งานเว็บไซต์ได้รับประสบการณ์ใช้งานที่ดีและใช้งาน
+              จะช่วยเพิ่มโอกาสทางธุรกิจได้<br />
+              กำลังศึกษาอยู่ที่สถาบันเทคโนโลยีพระจอมเกล้าคุณทหาร ลาดกระบัง<br /><br />
+              ความสนใจในสายงาน : สนใจในการทำ Frontend Development กำลังพัฒนาสกิลการทำอนิเมชั่นที่หน้าเว็บให้เก่งมากขึ้นเพราะเชื่อว่าการตอบสนองที่ลื่นและมีประติสัมพันธ์กับผู้ใช้จะช่วยเพิ่มประสบการณ์การใช้งานที่ดีได้
+            </p>
+          </div>
         </div>
-      </div>
-      <div>
-        <FadeUpWhenVisible>
-          <h2 className="text-2xl md:text-3xl text-center mb-4">
-            Stacks ที่เคยใช้
+      </FadeUpWhenVisible>
+      <FadeUpWhenVisible>
+        <div>
+          <FadeUpWhenVisible>
+            <h2 className="text-2xl md:text-3xl text-center mb-4">
+              Stacks ที่เคยใช้
+            </h2>
+          </FadeUpWhenVisible>
+          <Stack skills={stacks} />
+        </div>
+      </FadeUpWhenVisible>
+      <FadeUpWhenVisible>
+        <section className="flex flex-col space-y-4 mb-4">
+          <h2 className="text-2xl md:text-3xl text-center">
+            ช่องทางการติดต่อ
           </h2>
-        </FadeUpWhenVisible>
-        <Stack skills={stacks} />
-      </div>
-      <section className="flex flex-col space-y-4 mb-4">
-        <h2 className="text-2xl md:text-3xl text-center">
-          ช่องทางการติดต่อ
-        </h2>
-        <ContactSection />
-      </section>
+          <ContactSection />
+        </section>
+      </FadeUpWhenVisible>
     </main>
   )
 }

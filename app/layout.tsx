@@ -19,7 +19,7 @@ export default async function RootLayout({
       <html lang="en" suppressHydrationWarning className={`${mitr.className} scrollbar-none`}>
         <body>
           <Providers>
-            <main className="relative mt-5 mb-15 sm:my-15 p-5">
+            <main className="relative pt-24 pb-20 sm:pb-5 px-5">
               {children}
               <div className="fixed top-0 left-0 -z-100 w-32 h-32 bg-linear-to-r from-[#00c950]/50 to-[#00aaff]/50 rounded-full blur-3xl pointer-events-none" />
               <div className="fixed bottom-0 right-0 -z-100 w-40 h-40 bg-linear-to-l from-[#00c950]/50 to-[#00aaff]/50 rounded-full blur-3xl pointer-events-none" />

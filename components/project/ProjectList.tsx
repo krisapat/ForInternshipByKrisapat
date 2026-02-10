@@ -4,14 +4,15 @@ import { ProjectProps } from "@/utils/type"
 
 interface ProjectListProps {
   project: ProjectProps[]
+  isAdmin?: boolean
 }
 
-const ProjectList = ({ project }: ProjectListProps) => {
+const ProjectList = ({ project, isAdmin = false }: ProjectListProps) => {
   return (
     <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
       {project.map((item, index) => (
         <AnimatedCard key={item.id} index={index}>
-          <ProjectCard project={item} />
+          <ProjectCard project={item} isAdmin={isAdmin} />
         </AnimatedCard>
       ))}
     </section>

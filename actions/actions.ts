@@ -7,10 +7,6 @@ import { cache } from "react"
 import db from "@/utils/db"
 import { revalidatePath } from "next/cache"
 
-export async function getData() {
-  // จำลองการโหลดข้อมูล 2 วินาที (เพื่อให้สอดคล้องกับแอนิเมชัน)
-  await new Promise((resolve) => setTimeout(resolve, 1500));
-}
 
 const getAuthUser = cache(async () => {
   const user = await currentUser()

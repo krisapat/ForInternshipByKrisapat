@@ -5,54 +5,54 @@ import { menuLink } from "@/utils/links"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
+import { motion } from "motion/react"
 
 const MenuMobile = () => {
     const pathname = usePathname()
 
+    const allItems = [
+        ...menuLink,
+        { path: "/setting", name: "Setting", icon: null },
+    ]
+
     return (
-        <nav className="flex justify-between items-center px-2 py-1">
-            {menuLink.map((item) => {
-                const Icon = item.icon
+        <nav className="flex justify-around items-end px-2 pt-2 pb-1">
+            {allItems.map((item) => {
                 const isActive =
                     item.path === "/"
                         ? pathname === "/"
                         : pathname.startsWith(item.path)
+
+                const Icon = item.icon
 
                 return (
                     <Link
                         key={item.path}
                         href={item.path}
                         className={cn(
-                            "flex flex-col items-center flex-1 py-1 transition-colors",
+                            "relative flex flex-col items-center flex-1 py-1 transition-colors duration-200",
                             isActive
-                                ? "text-primary font-semibold"
-                                : "text-gray-700 dark:text-gray-200 hover:text-primary"
+                                ? "text-foreground"
+                                : "text-muted-foreground"
                         )}
                     >
-                        <Icon size={22} />
-                        <span className="text-[11px] mt-1">{item.name}</span>
+                        {/* Animated active dot indicator */}
+                        {isActive && (
+                            <motion.span
+                                layoutId="mobile-nav-dot"
+                                className="absolute -top-1.5 w-5 h-1 rounded-full bg-linear-to-r from-[#00c950] to-[#00aaff]"
+                                transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                            />
+                        )}
+                        {Icon ? (
+                            <Icon size={20} />
+                        ) : (
+                            <SettingsIcon size={20} />
+                        )}
+                        <span className="text-[10px] mt-0.5 font-medium">{item.name}</span>
                     </Link>
                 )
             })}
-
-            {/* Setting icon */}
-            {(() => {
-                const isActive = pathname.startsWith("/setting")
-                return (
-                    <Link
-                        href="/setting"
-                        className={cn(
-                            "flex flex-col items-center flex-1 py-1 transition-colors",
-                            isActive
-                                ? "text-primary font-semibold"
-                                : "text-gray-700 dark:text-gray-200 hover:text-primary"
-                        )}
-                    >
-                        <SettingsIcon size={22} />
-                        <span className="text-[11px] mt-1">Setting</span>
-                    </Link>
-                )
-            })()}
         </nav>
     )
 }

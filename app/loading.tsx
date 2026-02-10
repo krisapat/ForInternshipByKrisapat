@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 export default function Loading() {
   return (
@@ -27,16 +27,16 @@ export default function Loading() {
             className="text-7xl font-bold tracking-tight"
             style={{
               fontFamily: "'Inter', 'Segoe UI', sans-serif",
-              stroke: "url(#krisapatGradient)", 
+              stroke: "url(#krisapatGradient)",
               strokeWidth: "1.5",
-              strokeLinejoin: "round", 
-              strokeLinecap: "round",  
+              strokeLinejoin: "round",
+              strokeLinecap: "round",
               fill: "url(#krisapatGradient)",
             }}
-            initial={{ 
-              fillOpacity: 0, 
-              strokeDasharray: "1000", 
-              strokeDashoffset: "1000" 
+            initial={{
+              fillOpacity: 0,
+              strokeDasharray: "1000",
+              strokeDashoffset: "1000"
             }}
             animate={{
               fillOpacity: 1,
